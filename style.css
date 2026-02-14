@@ -1,0 +1,44 @@
+/* SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+/* SMOOTH SCROLLING SETUP (Lenis) */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important; /* Force Lenis to handle scroll */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none; /* Keeps map smooth while scrolling over it */
+}
+/* CUSTOM SCROLLBAR (Using Brand Teal) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F1F5F9; /* Fixed: Changed from EDEDCE (Cream) to Platinum */
+}
+::-webkit-scrollbar-thumb {
+    background: #296374; /* Teal Thumb */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0C2C55; /* Dark Blue Hover */
+}
+
+/* NAVBAR SCROLLED STATE */
+.nav-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.98);
+}

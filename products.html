@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog | Rakme Marine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Manrope', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0C2C55',
+                            teal: '#296374',
+                            steel: '#629FAD',
+                            platinum: '#F1F5F9',
+                            white: '#FFFFFF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-platinum text-slate-800">
+
+    <nav class="fixed w-full z-50 bg-white border-b border-brand-steel/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex flex-col leading-none">
+                <span class="text-2xl font-extrabold text-brand-dark tracking-tight">RAKME</span>
+                <span class="text-[10px] font-bold text-brand-teal uppercase tracking-[0.2em]">Engineering & Marine</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-brand-dark">Home</a>
+                <a href="products.html" class="text-brand-dark">Catalog</a>
+                <a href="index.html#contact" class="bg-brand-dark text-white px-5 py-2.5 rounded hover:bg-brand-teal transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-brand-dark min-h-[50vh] flex items-center justify-center pt-20 px-6 relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-64 h-64 bg-brand-teal rounded-full opacity-20 blur-3xl"></div>
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Engineering Catalog</h1>
+            <p class="text-brand-steel max-w-2xl mx-auto">Complete inventory of Ministry Approved marine safety and structural components.</p>
+        </div>
+    </div>
+
+    <div class="bg-white border-b border-brand-steel/20 sticky top-20 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 overflow-x-auto">
+            <div class="flex gap-4 min-w-max justify-center">
+                <button onclick="filterProducts('all')" class="filter-btn active px-6 py-2 rounded-full text-sm font-bold border border-brand-dark bg-brand-dark text-white transition">All Products</button>
+                <button onclick="filterProducts('whistles')" class="filter-btn px-6 py-2 rounded-full text-sm font-bold border border-slate-200 text-slate-600 hover:border-brand-dark hover:text-brand-dark transition">Whistles</button>
+                <button onclick="filterProducts('windows')" class="filter-btn px-6 py-2 rounded-full text-sm font-bold border border-slate-200 text-slate-600 hover:border-brand-dark hover:text-brand-dark transition">Windows</button>
+                <button onclick="filterProducts('castings')" class="filter-btn px-6 py-2 rounded-full text-sm font-bold border border-slate-200 text-slate-600 hover:border-brand-dark hover:text-brand-dark transition">Castings</button>
+                <button onclick="filterProducts('wipers')" class="filter-btn px-6 py-2 rounded-full text-sm font-bold border border-slate-200 text-slate-600 hover:border-brand-dark hover:text-brand-dark transition">Wipers</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-16 max-w-7xl mx-auto px-6 min-h-screen">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="product-grid">
+            
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="whistles">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/ws1.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Whistles</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Marine Electric Siren</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">High-performance audible signaling for commercial vessels.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="whistles">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/ws2.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Whistles</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Ships Air Whistle</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Pneumatic horn system with long-range audibility.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="whistles">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/ws3.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Whistles</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Model HRA ZD</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Heavy duty marine horn unit.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="whistles">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/elhrn.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Whistles</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Marine Electric Horns</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Standard electric signaling devices.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="windows">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/fireproof-marine-scuttle-windows-125x125.jpg" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Windows</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Fireproof Scuttle</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">ISO standard fire-resistant side scuttle window.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="windows">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/win3.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Windows</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Aluminium Openable</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Lightweight aluminium frame marine window.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="windows">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/weldeable.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Windows</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Aluminium Weldable</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Designed for direct superstructure welding.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="windows">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/marine-side-scuttle.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Windows</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Marine Side Scuttle</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Circular brass or steel side scuttle unit.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="windows">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/win5.jpg" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Windows</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Waterproof Window</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">High-integrity seal for exposed areas.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="castings">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/rudder-stock.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Castings</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Rudder Stock</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Heavy duty ferrous casting for steering assembly.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="castings">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/nf-casting2.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Castings</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Steel Ferrous Casting</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Custom steel alloy components for hull integrity.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="castings">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/nf-casting1.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Castings</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Copper Bushings</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Non-ferrous precision bushings.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="castings">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/forged-bars.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Castings</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Marine Forged Bars</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">High-strength forged steel bars for shafting.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="wipers">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/straight-line-window-piper.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Wipers</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Straight Line Wiper</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Heavy duty linear window wiper for bridges.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card group bg-white border border-brand-steel/20 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-category="wipers">
+                <div class="h-56 bg-brand-platinum p-4 overflow-hidden relative flex items-center justify-center">
+                    <img src="./images/Marine-CVS.png" class="max-w-full max-h-full object-contain group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <div class="text-xs font-bold text-brand-teal uppercase mb-1">Wipers</div>
+                    <h3 class="font-bold text-brand-dark text-lg mb-2">Clear View Screen</h3>
+                    <p class="text-sm text-slate-500 mb-4 line-clamp-2">Rotary screen for visibility in rain/snow.</p>
+                    <a href="index.html#contact" class="block w-full text-center border border-brand-steel/30 py-2 rounded text-sm font-bold text-brand-dark hover:bg-brand-dark hover:text-white transition">Request Quote</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-20 pt-12 border-t border-brand-steel/20 text-center" data-aos="fade-up">
+            <p class="text-slate-500 mb-6 font-medium">Prefer buying via a marketplace?</p>
+            <a href="https://www.tradeindia.com/rakme-engineering-marine-equipment-6533654/" 
+               target="_blank" 
+               class="inline-flex items-center gap-3 bg-brand-dark hover:bg-brand-teal text-white px-10 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-brand-teal/20 group">
+                
+                <svg class="w-6 h-6 text-brand-steel group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                
+                Shop at TradeIndia
+                
+                <svg class="w-5 h-5 opacity-50 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-white border-t border-white/10 pt-16 pb-8">
+        <div class="text-center text-xs text-brand-steel/50">
+            &copy; 2026 Rakme Engineering & Marine Equipment.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-dark', 'text-white', 'border-brand-dark');
+                btn.classList.add('text-slate-600', 'border-slate-200');
+                
+                if(btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent.includes('All'))) {
+                    btn.classList.remove('text-slate-600', 'border-slate-200');
+                    btn.classList.add('bg-brand-dark', 'text-white', 'border-brand-dark');
+                }
+            });
+
+            const items = document.querySelectorAll('.product-card');
+            items.forEach(item => {
+                const itemCat = item.dataset.category;
+                if (category === 'all' || itemCat === category) {
+                    item.style.display = 'block';
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.opacity = '1', 50);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
