@@ -1,0 +1,23 @@
+# Windows thumbnail database files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycler Folder
+$RECYCLE.BIN/
+
+# VS Code config
+.vscode/
+
+# Local model app files
+.gemini/
+.antigravity/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
